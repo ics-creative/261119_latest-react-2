@@ -2,18 +2,9 @@ ICS MEDIA『最近のReactで変わる画面実装』のサンプルコードで
 
 以下のURLからデモを確認できます。
 
-1. [Suspenseによるローディング](https://ics-creative.github.io/260901_latest-react/#/suspense)
-2. [useTransitionによるUIのブロック回避](https://ics-creative.github.io/260901_latest-react/#/transition)
-3. [useDeferredValueによる遅延更新](https://ics-creative.github.io/260901_latest-react/#/deferred)
-4. [useOptimisticとuseActionStateによる楽観的更新](https://ics-creative.github.io/260901_latest-react/#/optimistic)
-5. [Activityによる状態保持](https://ics-creative.github.io/260901_latest-react/#/activity)
-6. [ViewTransitionによる画面遷移アニメーション](https://ics-creative.github.io/260901_latest-react/#/view-transition)
+- [ViewTransitionによる画面遷移アニメーション](https://ics-creative.github.io/261119_latest-react-2/#/view-transition)
 
-`<ViewTransition>`を使用するため、React Canaryを利用しています。React CompilerはViteのReactプラグインから有効化しています。
-
-## 使用したアイコン画像
-
-ハートのアイコン画像はLucideの[Heart](https://lucide.dev/icons/heart)を使用しています。
+React CompilerはViteのReactプラグインから有効化しています。
 
 ## 使用した写真
 

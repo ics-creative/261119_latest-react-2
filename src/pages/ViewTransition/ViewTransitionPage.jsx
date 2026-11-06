@@ -1,6 +1,6 @@
 import { startTransition, useState, ViewTransition } from "react";
-import { users } from "../Suspense/fetchUsers.js";
 import { ProfileDetail } from "./ProfileDetail.jsx";
+import { users } from "./users.js";
 
 const UserList = ({ onSelect }) => (
   <section>
@@ -33,7 +33,7 @@ const UserList = ({ onSelect }) => (
 );
 
 const UserDetail = ({ user, onBack }) => (
-  <section class="user-detail">
+  <section className="user-detail">
     <div>
       <button onClick={onBack} type="button">
         Back
