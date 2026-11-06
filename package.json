@@ -1,5 +1,5 @@
 {
-  "name": "260901_react-ui",
+  "name": "2601119_react-ui-2",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -12,18 +12,18 @@
     "__lint": "eslint . --fix"
   },
   "dependencies": {
-    "react": "19.3.0-canary-d5736f09-20260507",
-    "react-dom": "19.3.0-canary-d5736f09-20260507",
-    "react-router-dom": "7.18.2"
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.9",
+    "@biomejs/biome": "2.6.4",
     "@eslint/js": "^10.0.1",
-    "@vitejs/plugin-react": "6.1.0",
+    "@vitejs/plugin-react": "6.1.2",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "10.8.1",
+    "eslint": "10.13.0",
     "eslint-plugin-react-hooks": "7.1.1",
-    "globals": "17.11.0",
-    "vite": "8.2.1"
+    "globals": "17.13.0",
+    "vite": "8.3.5"
   }
 }
