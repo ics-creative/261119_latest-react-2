@@ -41,6 +41,13 @@ button.button-secondary {
   }
 }
 
+/* --- Home ---*/
+
+.home {
+  display: grid;
+  gap: 12px;
+}
+
 /* --- View Transition ---*/
 
 .view-transition {
