@@ -48,7 +48,12 @@ export const NoEffectEvent = () => {
           onChange={(event) => setTheme(event.target.value)}
         />
       </div>
-      <ProfileResult result={result} theme={theme} />
+      <ProfileResult
+        count={result.count}
+        name={result.profile?.name}
+        role={result.profile?.role}
+        theme={theme}
+      />
       <Toast message={toast?.message} />
     </div>
   );

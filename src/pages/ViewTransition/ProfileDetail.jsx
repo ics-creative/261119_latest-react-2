@@ -5,7 +5,6 @@
  * @param {string} branch
  * @param {string} address
  * @param {string} phone
- * @returns
  */
 export const ProfileDetail = ({ role, name, branch, address, phone }) => (
   <div className="profile-detail">
@@ -23,7 +22,7 @@ export const ProfileDetail = ({ role, name, branch, address, phone }) => (
       <div>
         <dt>Phone</dt>
         <dd>
-          <a href={`tel:${phone.replaceAll(" ", "")}`}>{phone}</a>
+          <a>{phone}</a>
         </dd>
       </div>
     </dl>
