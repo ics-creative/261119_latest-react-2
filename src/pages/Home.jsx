@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-const pages = [{ path: "/view-transition", label: "ViewTransition" }];
+const pages = [
+  { path: "/view-transition", label: "ViewTransition" },
+  { path: "/effect-event", label: "useEffectEvent" },
+];
 
 /**
  * 各ページへのリンク一覧を表示します。

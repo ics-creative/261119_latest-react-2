@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
+import { EffectEventPage } from "./pages/EffectEvent/EffectEventPage.jsx";
 import { Home } from "./pages/Home.jsx";
 import { ViewTransitionPage } from "./pages/ViewTransition/ViewTransitionPage.jsx";
 import "./styles/base.css";
@@ -26,6 +27,10 @@ const router = createHashRouter([
         <ViewTransitionPage />
       </>
     ),
+  },
+  {
+    path: "/effect-event",
+    element: <EffectEventPage />,
   },
   {
     path: "*",

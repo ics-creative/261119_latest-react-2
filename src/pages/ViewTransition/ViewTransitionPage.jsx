@@ -61,7 +61,7 @@ const UserDetail = ({ user, onBack }) => (
 );
 
 /**
- * ViewTransitionによる一覧と詳細の遷移を確認するページを表示します。
+ * ViewTransitionページ
  */
 export const ViewTransitionPage = () => {
   const [selectedUser, setSelectedUser] = useState(null);

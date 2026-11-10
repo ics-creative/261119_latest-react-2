@@ -41,11 +41,84 @@ button.button-secondary {
   }
 }
 
+.select-box {
+  width: 100%;
+  display: grid;
+  gap: 8px;
+}
+
+.select-box__item {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  padding: 8px;
+  border-radius: 4px;
+  color: var(--color-text);
+  background: var(--color-white);
+  font-size: 16px;
+}
+
+.select-box__label {
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 40px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page__section {
+  display: grid;
+  align-content: start;
+  gap: 24px;
+
+  h2 {
+    color: var(--color-primary);
+    font-size: 27px;
+  }
+}
+
+.toast {
+  background: var(--color-primary-light);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
 /* --- Home ---*/
 
 .home {
   display: grid;
   gap: 12px;
+}
+
+/* --- Effect Event ---*/
+
+.effect-event {
+  display: grid;
+  gap: 40px;
+}
+
+.effect-event__controls {
+  display: grid;
+  gap: 24px;
+}
+
+.effect-event__result {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+
+  &[data-theme="black"] {
+    background: var(--color-text);
+    color: var(--color-white);
+  }
 }
 
 /* --- View Transition ---*/
