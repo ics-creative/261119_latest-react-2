@@ -8,11 +8,11 @@ import { WithEffectEvent } from "./WithEffectEvent.jsx";
 export const EffectEventPage = () => (
   <CompareGrid>
     <section className="page__section">
-      <h2>useEffectEventなし</h2>
+      <h2>Only useEffect</h2>
       <NoEffectEvent />
     </section>
     <section className="page__section">
-      <h2>useEffectEventあり</h2>
+      <h2>With useEffectEvent</h2>
       <WithEffectEvent />
     </section>
   </CompareGrid>

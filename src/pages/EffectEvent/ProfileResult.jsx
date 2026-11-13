@@ -7,7 +7,7 @@
  */
 export const ProfileResult = ({ count, name, role, theme }) => (
   <section className="effect-event__result" data-theme={theme}>
-    <p>API Count: {count}</p>
+    <p className="effect-event__result-title">API Count: {count}</p>
     {name && (
       <div>
         <p>Name: {name}</p>

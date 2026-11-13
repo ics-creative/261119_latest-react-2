@@ -41,10 +41,68 @@ button.button-secondary {
   }
 }
 
+.toggle-group {
+  border: none;
+  > legend {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+}
+
+.toggle-group__buttons {
+  display: flex;
+  border: 1px solid var(--color-border);
+  width: fit-content;
+  border-radius: 999px;
+
+  > .toggle-group__item {
+    border: none;
+    width: 80px;
+    padding: 8px 12px;
+    background: none;
+    border-radius: 999px;
+    transition: background 0.2s;
+    font-size: 16px;
+    color: var(--color-text);
+
+    &.active {
+      background: color-mix(
+        in srgb,
+        var(--color-secondary) 80%,
+        transparent 20%
+      );
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: color-mix(
+          in srgb,
+          var(--color-secondary) 20%,
+          transparent 80%
+        );
+      }
+    }
+  }
+}
+
+.number-input,
 .select-box {
   width: 100%;
   display: grid;
   gap: 8px;
+}
+
+.number-input {
+  > input {
+    border: 1px solid var(--color-border);
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+}
+
+.number-input > input {
+  max-width: 100px;
 }
 
 .select-box__item {
@@ -57,6 +115,7 @@ button.button-secondary {
   font-size: 16px;
 }
 
+.number-input__label,
 .select-box__label {
   font-weight: bold;
   font-size: 16px;
@@ -98,6 +157,28 @@ button.button-secondary {
   gap: 12px;
 }
 
+/* --- Transition ---*/
+
+.transition {
+  display: grid;
+  gap: 40px;
+}
+
+.transition__controls {
+  display: grid;
+  gap: 24px;
+}
+
+.transition__results {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  font-size: 20px;
+  > dt {
+    font-weight: bold;
+  }
+}
+
 /* --- Effect Event ---*/
 
 .effect-event {
@@ -119,6 +200,11 @@ button.button-secondary {
     background: var(--color-text);
     color: var(--color-white);
   }
+}
+
+.effect-event__result-title {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* --- View Transition ---*/

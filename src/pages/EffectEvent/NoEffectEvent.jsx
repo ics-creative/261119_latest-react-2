@@ -32,6 +32,7 @@ export const NoEffectEvent = () => {
     <div className="effect-event">
       <div className="effect-event__controls">
         <SelectBox
+          label="User"
           list={profiles.map((profile) => ({
             value: profile.id,
             label: profile.id,
@@ -40,6 +41,7 @@ export const NoEffectEvent = () => {
           onChange={(event) => setProfileId(event.target.value)}
         />
         <SelectBox
+        label="Theme Color"
           list={[
             { value: "black", label: "black" },
             { value: "white", label: "white" },

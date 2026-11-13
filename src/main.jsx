@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import { EffectEventPage } from "./pages/EffectEvent/EffectEventPage.jsx";
 import { Home } from "./pages/Home.jsx";
+import { TransitionPage } from "./pages/Transition/TransitionPage.jsx";
 import { ViewTransitionPage } from "./pages/ViewTransition/ViewTransitionPage.jsx";
 import "./styles/base.css";
 import "./styles/app.css";
@@ -31,6 +32,15 @@ const router = createHashRouter([
   {
     path: "/effect-event",
     element: <EffectEventPage />,
+  },
+  {
+    path: "/transition",
+    element: (
+      <>
+        <title>{`${siteTitle} | useTransition`}</title>
+        <TransitionPage />
+      </>
+    ),
   },
   {
     path: "*",
