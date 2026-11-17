@@ -33,7 +33,7 @@ export const WithEffectEvent = () => {
     <div className="effect-event">
       <div className="effect-event__controls">
         <SelectBox
-        label="User"
+          label="User"
           list={profiles.map((profile) => ({
             value: profile.id,
             label: profile.id,
@@ -42,7 +42,7 @@ export const WithEffectEvent = () => {
           onChange={(event) => setProfileId(event.target.value)}
         />
         <SelectBox
-        label="Theme Color"
+          label="Theme Color"
           list={[
             { value: "black", label: "black" },
             { value: "white", label: "white" },

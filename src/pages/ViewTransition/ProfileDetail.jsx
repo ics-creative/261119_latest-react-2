@@ -21,9 +21,7 @@ export const ProfileDetail = ({ role, name, branch, address, phone }) => (
       </div>
       <div>
         <dt>Phone</dt>
-        <dd>
-          <a>{phone}</a>
-        </dd>
+        <dd>{phone}</dd>
       </div>
     </dl>
   </div>

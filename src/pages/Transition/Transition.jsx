@@ -78,7 +78,11 @@ export const Transition = () => {
         />
       </div>
 
-      <TransitionResults unitPrice={unitPrice} total={total} isPending={isPending} />
+      <TransitionResults
+        unitPrice={unitPrice}
+        total={total}
+        isPending={isPending}
+      />
     </div>
   );
 };

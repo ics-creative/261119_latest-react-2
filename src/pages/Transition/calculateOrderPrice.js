@@ -4,7 +4,7 @@ import { productPrices } from "./productVariants.js";
 /**
  * 単価を取得する
  * @param {string} color
- * @param {stirng} size
+ * @param {string} size
  */
 export const getUnitPrice = (color, size) => productPrices[color][size];
 

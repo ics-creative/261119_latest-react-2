@@ -41,7 +41,7 @@ export const NoEffectEvent = () => {
           onChange={(event) => setProfileId(event.target.value)}
         />
         <SelectBox
-        label="Theme Color"
+          label="Theme Color"
           list={[
             { value: "black", label: "black" },
             { value: "white", label: "white" },
