@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { SelectBox } from "../../components/SelectBox.jsx";
-import { Toast } from "../../components/Toast.jsx";
-import { useToast } from "../../hooks/useToast.js";
-import { fetchProfile, profiles } from "./fetchProfile.js";
-import { ProfileResult } from "./ProfileResult.jsx";
+import { SelectBox } from "../../components/SelectBox";
+import { useToast } from "../../hooks/useToast";
+import { fetchProfile, profiles } from "./fetchProfile";
+import { ProfileResult } from "./ProfileResult";
 
 /**
  * useEffectEventを使わないデモ
@@ -17,7 +16,7 @@ export const NoEffectEvent = () => {
   useEffect(() => {
     const fetchProfileAndNotify = async () => {
       const profile = await fetchProfile(profileId);
-      showToast(`Success! theme:${theme}`);
+      showToast("Success!", theme);
 
       setResult((previous) => ({
         profile,
@@ -56,7 +55,7 @@ export const NoEffectEvent = () => {
         role={result.profile?.role}
         theme={theme}
       />
-      <Toast message={toast?.message} />
+      {toast}
     </div>
   );
 };

@@ -148,6 +148,11 @@ button.button-secondary {
   background: var(--color-primary-light);
   padding: 8px 12px;
   border-radius: 8px;
+
+  &.black {
+    background-color: var(--color-text-muted);
+    color: var(--color-white);
+  }
 }
 
 /* --- Home ---*/

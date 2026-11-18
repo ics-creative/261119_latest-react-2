@@ -1,9 +1,8 @@
 import { useEffect, useEffectEvent, useState } from "react";
-import { SelectBox } from "../../components/SelectBox.jsx";
-import { Toast } from "../../components/Toast.jsx";
-import { useToast } from "../../hooks/useToast.js";
-import { fetchProfile, profiles } from "./fetchProfile.js";
-import { ProfileResult } from "./ProfileResult.jsx";
+import { SelectBox } from "../../components/SelectBox";
+import { useToast } from "../../hooks/useToast";
+import { fetchProfile, profiles } from "./fetchProfile";
+import { ProfileResult } from "./ProfileResult";
 
 /**
  * useEffectEventを使ったデモ
@@ -15,7 +14,7 @@ export const WithEffectEvent = () => {
   const { toast, showToast } = useToast();
 
   const showToastWithTheme = useEffectEvent(() => {
-    showToast(`Success! theme:${theme}`);
+    showToast("Success!", theme);
   });
 
   useEffect(() => {
@@ -57,7 +56,7 @@ export const WithEffectEvent = () => {
         role={result.profile?.role}
         theme={theme}
       />
-      <Toast message={toast?.message} />
+      {toast}
     </div>
   );
 };
