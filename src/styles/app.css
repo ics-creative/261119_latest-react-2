@@ -29,18 +29,6 @@ button {
   }
 }
 
-button.button-secondary {
-  color: var(--color-primary);
-  background: var(--color-white);
-  border: 1px solid var(--color-primary);
-
-  @media (any-hover: hover) {
-    &:not(:disabled):hover {
-      background: var(--color-secondary-hover);
-    }
-  }
-}
-
 .toggle-group {
   border: none;
   > legend {
@@ -74,7 +62,7 @@ button.button-secondary {
     }
 
     @media (any-hover: hover) {
-      &:hover {
+      &:not(.active):hover {
         background: color-mix(
           in srgb,
           var(--color-secondary) 20%,
@@ -270,71 +258,6 @@ button.button-secondary {
   }
 }
 
-.user-detail__profile {
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 40px;
-  padding: 32px;
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  background: var(--color-white);
-}
-
-.user-detail__image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profile-detail {
-  min-width: 0;
-  display: grid;
-  align-content: start;
-  gap: 4px;
-}
-
-.profile-detail__role {
-  color: var(--color-text-muted);
-  font-size: 14px;
-}
-
-.profile-detail__title {
-  color: var(--color-primary);
-  font-size: 26px;
-}
-
-.profile-detail__content {
-  display: grid;
-  gap: 12px;
-  margin-top: 20px;
-
-  > div {
-    display: grid;
-    gap: 2px;
-  }
-
-  dt {
-    color: var(--color-text-muted);
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  dd {
-    overflow-wrap: anywhere;
-  }
-
-  a {
-    color: var(--color-primary);
-  }
-}
-
-.user-detail {
-  display: grid;
-  gap: 40px;
-}
-
 @media (width <= 600px) {
   .main-content {
     width: min(100% - 24px, 1180px);
@@ -343,12 +266,6 @@ button.button-secondary {
 
   .view-transition {
     padding: 16px;
-  }
-
-  .user-detail__profile {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px;
   }
 }
 
