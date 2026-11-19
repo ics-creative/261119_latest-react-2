@@ -1,10 +1,7 @@
 ICS MEDIA『最近のReactで変わる画面実装』のサンプルコードです。
 
-以下のURLからデモを確認できます。
+- https://ics-creative.github.io/261119_latest-react-2/
 
-- [ViewTransitionによる画面遷移アニメーション](https://ics-creative.github.io/261119_latest-react-2/#/view-transition)
-
-React CompilerはViteのReactプラグインから有効化しています。
 
 ## 使用した写真
 
