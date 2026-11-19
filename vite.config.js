@@ -18,5 +18,10 @@ export default defineConfig({
   build: {
     outDir: "docs",
     emptyOutDir: true,
+    rolldownOptions: {
+      output: {
+        keepNames: true,
+      },
+    },
   },
 });
