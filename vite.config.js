@@ -4,6 +4,11 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   base: "./",
+  resolve: {
+    alias: {
+      "react-dom/client": "react-dom/profiling",
+    },
+  },
   plugins: [
     react(),
     babel({
