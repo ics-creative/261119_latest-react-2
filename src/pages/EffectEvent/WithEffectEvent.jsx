@@ -1,62 +1,48 @@
 import { useEffect, useEffectEvent, useState } from "react";
-import { SelectBox } from "../../components/SelectBox";
-import { useToast } from "../../hooks/useToast";
-import { fetchProfile, profiles } from "./fetchProfile";
-import { ProfileResult } from "./ProfileResult";
+import { AutoSaveResult } from "./AutoSaveResult.jsx";
+import { autoSave } from "./autoSave.js";
+import { countdown } from "./countdown.js";
 
 /**
  * useEffectEventを使ったデモ
  */
 export const WithEffectEvent = () => {
-  const [profileId, setProfileId] = useState("user-1");
-  const [theme, setTheme] = useState("white");
-  const [result, setResult] = useState({ profile: null, count: 0 });
-  const { toast, showToast } = useToast();
+  // 入力値
+  const [content, setContent] = useState("");
+  // 保存された値
+  const [saved, setSaved] = useState("");
+  // 保存までのカウントダウン
+  const [secondsRemaining, setSecondsRemaining] = useState(5);
 
-  const showToastWithTheme = useEffectEvent(() => {
-    showToast("Success!", theme);
+  const saveDraft = useEffectEvent(() => {
+    setSaved(content);
   });
 
   useEffect(() => {
-    const fetchProfileAndNotify = async () => {
-      const profile = await fetchProfile(profileId);
-      showToastWithTheme();
+    // 自動保存を開始する
+    const stopAutoSave = autoSave(() => saveDraft());
+    // カウントダウンを開始する
+    const stopCountdown = countdown(setSecondsRemaining);
 
-      setResult((previous) => ({ profile, count: previous.count + 1 }));
+    return () => {
+      stopAutoSave();
+      stopCountdown();
     };
-
-    fetchProfileAndNotify();
-  }, [profileId]);
+  }, []);
 
   return (
     <div className="effect-event">
-      <div className="effect-event__controls">
-        <SelectBox
-          label="User"
-          list={profiles.map((profile) => ({
-            value: profile.id,
-            label: profile.id,
-          }))}
-          value={profileId}
-          onChange={(event) => setProfileId(event.target.value)}
-        />
-        <SelectBox
-          label="Theme Color"
-          list={[
-            { value: "black", label: "black" },
-            { value: "white", label: "white" },
-          ]}
-          value={theme}
-          onChange={(event) => setTheme(event.target.value)}
-        />
-      </div>
-      <ProfileResult
-        count={result.count}
-        name={result.profile?.name}
-        role={result.profile?.role}
-        theme={theme}
+      <textarea
+        className="effect-event__input"
+        placeholder="Write a note..."
+        rows={3}
+        value={content}
+        onChange={(event) => setContent(event.target.value)}
       />
-      {toast}
+      <AutoSaveResult
+        savedContent={saved}
+        secondsRemaining={secondsRemaining}
+      />
     </div>
   );
 };

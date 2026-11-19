@@ -73,8 +73,7 @@ button {
   }
 }
 
-.number-input,
-.select-box {
+.number-input {
   width: 100%;
   display: grid;
   gap: 8px;
@@ -93,18 +92,7 @@ button {
   max-width: 100px;
 }
 
-.select-box__item {
-  width: 100%;
-  border: 1px solid var(--color-border);
-  padding: 8px;
-  border-radius: 4px;
-  color: var(--color-text);
-  background: var(--color-white);
-  font-size: 16px;
-}
-
-.number-input__label,
-.select-box__label {
+.number-input__label {
   font-weight: bold;
   font-size: 16px;
   color: var(--color-text);
@@ -129,17 +117,6 @@ button {
   h2 {
     color: var(--color-primary);
     font-size: 27px;
-  }
-}
-
-.toast {
-  background: var(--color-primary-light);
-  padding: 8px 12px;
-  border-radius: 8px;
-
-  &.black {
-    background-color: var(--color-text-muted);
-    color: var(--color-white);
   }
 }
 
@@ -179,24 +156,47 @@ button {
   gap: 40px;
 }
 
-.effect-event__controls {
-  display: grid;
-  gap: 24px;
+.effect-event__input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font: inherit;
+  resize: vertical;
 }
 
 .effect-event__result {
   display: grid;
   gap: 24px;
-  padding: 24px;
-
-  &[data-theme="black"] {
-    background: var(--color-text);
-    color: var(--color-white);
-  }
 }
 
-.effect-event__result-title {
-  font-size: 24px;
+.effect-event__second {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.effect-event__saved-wrapper {
+  border-radius: 8px;
+  border: 2px solid var(--color-primary);
+  padding: 30px;
+  position: relative;
+}
+
+.effect-event__saved-title {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 14px;
+  padding: 2px 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.effect-event__saved-content {
+  color: var(--color-primary);
   font-weight: bold;
 }
 
