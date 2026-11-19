@@ -229,7 +229,7 @@ button.button-secondary {
   list-style: none;
 }
 
-button.vt-user-list__button {
+.vt-user-list__card {
   width: 100%;
   min-height: 64px;
   padding: 12px;
@@ -241,13 +241,6 @@ button.vt-user-list__button {
   color: var(--color-text);
   background: transparent;
   font-size: 16px;
-  transition: background 0.2s;
-
-  @media (any-hover: hover) {
-    &:not(:disabled):hover {
-      background: color-mix(var(--color-secondary), transparent 80%);
-    }
-  }
 }
 
 .vt-user-list__image {

@@ -1,18 +1,14 @@
 import { startTransition, useState, ViewTransition } from "react";
-import { ProfileDetail } from "./ProfileDetail.jsx";
+import { ToggleGroup } from "../../components/ToggleGroup.jsx";
 import { users } from "./users.js";
 
-const UserList = ({ onSelect }) => (
+const UserList = ({ sortedUsers }) => (
   <section>
     <ul className="vt-user-list">
-      {users.map((user) => (
-        <li key={user.id}>
-          <ViewTransition name={`user-card-${user.id}`}>
-            <button
-              className="vt-user-list__button"
-              onClick={() => onSelect(user)}
-              type="button"
-            >
+      {sortedUsers.map((user) => (
+        <ViewTransition key={user.id}>
+          <li>
+            <div className="vt-user-list__card">
               <img
                 alt=""
                 className="vt-user-list__image"
@@ -23,40 +19,13 @@ const UserList = ({ onSelect }) => (
               <span className="vt-user-list__copy">
                 <strong>{user.name}</strong>
                 <small>{user.role}</small>
+                <small>{user.branch}</small>
               </span>
-            </button>
-          </ViewTransition>
-        </li>
+            </div>
+          </li>
+        </ViewTransition>
       ))}
     </ul>
-  </section>
-);
-
-const UserDetail = ({ user, onBack }) => (
-  <section className="user-detail">
-    <div>
-      <button onClick={onBack} type="button">
-        Back
-      </button>
-    </div>
-    <ViewTransition name={`user-card-${user.id}`}>
-      <article className="user-detail__profile">
-        <img
-          alt=""
-          className="user-detail__image"
-          height="120"
-          src={user.image}
-          width="120"
-        />
-        <ProfileDetail
-          name={user.name}
-          role={user.role}
-          branch={user.branch}
-          address={user.address}
-          phone={user.phone}
-        />
-      </article>
-    </ViewTransition>
   </section>
 );
 
@@ -64,23 +33,27 @@ const UserDetail = ({ user, onBack }) => (
  * ViewTransitionページ
  */
 export const ViewTransitionPage = () => {
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [sortKey, setSortKey] = useState("name");
+  const sortedUsers = [...users].sort((a, b) =>
+    a[sortKey].localeCompare(b[sortKey], "en"),
+  );
 
-  const selectUser = (user) => {
-    startTransition(() => setSelectedUser(user));
-  };
-
-  const closeUser = () => {
-    startTransition(() => setSelectedUser(null));
+  const changeSort = (nextSortKey) => {
+    startTransition(() => setSortKey(nextSortKey));
   };
 
   return (
     <div className="view-transition">
-      {selectedUser ? (
-        <UserDetail onBack={closeUser} user={selectedUser} />
-      ) : (
-        <UserList onSelect={selectUser} />
-      )}
+      <ToggleGroup
+        label="sort"
+        options={[
+          { label: "Name", value: "name" },
+          { label: "Branch", value: "branch" },
+        ]}
+        value={sortKey}
+        onChange={changeSort}
+      />
+      <UserList sortedUsers={sortedUsers} />
     </div>
   );
 };
